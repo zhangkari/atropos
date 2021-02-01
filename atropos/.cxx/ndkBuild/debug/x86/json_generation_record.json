@@ -1,0 +1,62 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 21 min SDK version: x86",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/debug/x86/android_gradle_build.json due to:",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "- expected json /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/debug/x86/android_gradle_build.json file is not present, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "- missing previous command file /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/debug/x86/build_command.txt, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027/Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/debug/x86\u0027",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/debug/x86\u0027",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "executing ndkBuild Executable : /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk\nAPP_ABI\u003dx86\nNDK_ALL_ABIS\u003dx86\nNDK_DEBUG\u003d1\nAPP_PLATFORM\u003dandroid-21\nNDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/obj\nNDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "Executable : /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk\nAPP_ABI\u003dx86\nNDK_ALL_ABIS\u003dx86\nNDK_DEBUG\u003d1\nAPP_PLATFORM\u003dandroid-21\nNDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/obj\nNDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed with problem. Exception: Build command failed.\nError while executing process /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build with arguments {NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib APP_SHORT_COMMANDS\u003dfalse LOCAL_SHORT_COMMANDS\u003dfalse -B -n}\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/*\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdbserver\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdb.setup\nmkdir -p /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86\necho [x86] \"Gdbserver      \": \"[i686-linux-android] /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdbserver\"\ninstall -p /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/prebuilt/android-x86/gdbserver/gdbserver /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdbserver\necho [x86] \"Gdbsetup       \": \"/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdb.setup\"\necho \"set solib-search-path /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/obj/local/x86\" \u003e /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdb.setup\necho \"directory /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/sysroot /Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni\" \u003e\u003e /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/lib/x86/gdb.setup\n\nmake: *** No rule to make target \u0027/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/AtNative.c\u0027, needed by \u0027/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/debug/obj/local/x86/objs-debug/AtNative/AtNative.o\u0027.  Stop.\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "debug|x86"
+  }
+]

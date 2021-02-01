@@ -1,0 +1,62 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 21 min SDK version: arm64-v8a",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/release/arm64-v8a/android_gradle_build.json due to:",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "- expected json /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/release/arm64-v8a/android_gradle_build.json file is not present, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "- missing previous command file /Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/release/arm64-v8a/build_command.txt, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027/Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/release/arm64-v8a\u0027",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/Users/mac2017/projects/android-lib-atropos/atropos/.cxx/ndkBuild/release/arm64-v8a\u0027",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "executing ndkBuild Executable : /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk\nAPP_ABI\u003darm64-v8a\nNDK_ALL_ABIS\u003darm64-v8a\nNDK_DEBUG\u003d0\nAPP_PLATFORM\u003dandroid-21\nNDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/obj\nNDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "Executable : /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk\nAPP_ABI\u003darm64-v8a\nNDK_ALL_ABIS\u003darm64-v8a\nNDK_DEBUG\u003d0\nAPP_PLATFORM\u003dandroid-21\nNDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/obj\nNDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed with problem. Exception: Build command failed.\nError while executing process /Users/mac2017/Library/Android/sdk/ndk/21.0.6113669/ndk-build with arguments {NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib APP_SHORT_COMMANDS\u003dfalse LOCAL_SHORT_COMMANDS\u003dfalse -B -n}\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib/arm64-v8a/*\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib/arm64-v8a/gdbserver\nrm -f /Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/lib/arm64-v8a/gdb.setup\n\nmake: *** No rule to make target \u0027/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/AtNative.c\u0027, needed by \u0027/Users/mac2017/projects/android-lib-atropos/atropos/build/intermediates/ndkBuild/release/obj/local/arm64-v8a/objs/AtNative/AtNative.o\u0027.  Stop.\n",
+    "file": "/Users/mac2017/projects/android-lib-atropos/atropos/src/main/jni/Android.mk",
+    "tag": "release|arm64-v8a"
+  }
+]
