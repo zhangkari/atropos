@@ -27,11 +27,15 @@ public final class AtPrefs extends AtContextAbility {
             .apply();
     }
 
-    public static class Account {
-
+    public static long get(String key, long def) {
+        return env._app.getSharedPreferences(TAG, 0)
+            .getLong(key, def);
     }
 
-    public static class App {
-
+    public static void put(String key, long value) {
+        env._app.getSharedPreferences(TAG, 0)
+            .edit()
+            .putLong(key, value)
+            .apply();
     }
 }
