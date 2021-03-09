@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven'
 
 def build = depends.build
 def libs = depends.libs
@@ -51,6 +52,59 @@ android {
     }
 */
 
+}
+
+def isRelease() {
+    return !depends.artifact.vname.contains("-")
+}
+
+def getRepoUrl() {
+    def url = NEXUS_HOST_URL + "/repository"
+    def releasesUrl = url + "/maven-releases/"
+    def snapshotUrl = url + "/maven-snapshots/"
+    isRelease() ? releasesUrl : snapshotUrl
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = GROUP
+            artifactId = ARTIFACT
+            version = VName
+        }
+    }
+
+    repositories {
+        maven {
+            def url = NEXUS_HOST_URL + "/repository/maven-public"
+            def releasesUrl = url + "/maven-releases/"
+            def snapshotUrl = url + "/maven-snapshots/"
+            url = isRelease() ? releasesUrl : snapshotUrl
+            credentials {
+                username = NEXUS_USERNAME
+                password = NEXUS_PASSWORD
+            }
+        }
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = GROUP
+            pom.artifactId = ARTIFACT
+            pom.version = VName
+            repository(url: getRepoUrl()) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+        }
+    }
+
+    println("uploadArchives")
+    println("####################################")
+    println("url => " + getRepoUrl())
+    println("artifact => " + GROUP + ":" + ARTIFACT + ":" + VName)
+    println("####################################")
 }
 
 dependencies {
