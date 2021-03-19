@@ -48,11 +48,11 @@ public class AtNetwork extends AtContextAbility {
     /**
      * 是否连接网络
      *
-     * @param context
      * @return
      */
-    public static boolean isConnected(Context context) {
+    public static boolean isConnected() {
         try {
+            Context context = env._app;
             ConnectivityManager conn = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo info = conn.getActiveNetworkInfo();
             return (info != null && info.isConnected());
@@ -63,17 +63,11 @@ public class AtNetwork extends AtContextAbility {
         return false;
     }
 
-
-    public static List<ScanResult> getWifiList(Context context) {
-        WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
-        return getWifiList(wifiManager);
-    }
-
     /**
      * 开始扫描wifi
      */
-    public static void startScanWifi(Context context) {
+    public static void startScanWifi() {
+        Context context = env._app;
         WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (null != wifiManager) {
             wifiManager.startScan();
@@ -84,10 +78,10 @@ public class AtNetwork extends AtContextAbility {
     /**
      * 获取wifi列表
      */
-    public static List<ScanResult> getWifiList(WifiManager mWifiManager) {
-        return excludeRepetition(mWifiManager.getScanResults());
+    public static List<ScanResult> getWifiList() {
+        WifiManager wifiManager = (WifiManager) env._app.getSystemService(Context.WIFI_SERVICE);
+        return excludeRepetition(wifiManager.getScanResults());
     }
-
 
     /**
      * 保存网络
@@ -345,13 +339,10 @@ public class AtNetwork extends AtContextAbility {
     /**
      * 判断 WIFI 网络是否可用
      *
-     * @param context 上下文对象
      * @return true：WIFI 可用，false：WIFI 不可用
      */
-    public static boolean isWifiConnected(Context context) {
-        if (null == context) {
-            throw new IllegalArgumentException("context is null !");
-        }
+    public static boolean isWifiConnected() {
+        Context context = env._app;
         boolean result = false;
         try {
             ConnectivityManager manager = (ConnectivityManager) context.getApplicationContext()
@@ -370,7 +361,6 @@ public class AtNetwork extends AtContextAbility {
     /**
      * 判断 ETHERNET 网络是否可用
      *
-     * @param context 上下文对象
      * @return true：ETHERNET 网络可用，false：ETHERNET 网络不可用
      */
     public static boolean isEthernetConnected() {
