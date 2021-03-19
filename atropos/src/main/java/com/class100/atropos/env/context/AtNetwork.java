@@ -59,21 +59,20 @@ public class AtNetwork extends AtContextAbility {
         } catch (Exception e) {
             AtLog.e(TAG, "isConnected", e.getMessage());
         }
-
         return false;
     }
 
     /**
      * 开始扫描wifi
      */
-    public static void startScanWifi() {
+    public static boolean startScanWifi() {
         Context context = env._app;
         WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        if (null != wifiManager) {
-            wifiManager.startScan();
+        if (null == wifiManager) {
+            return false;
         }
+        return wifiManager.startScan();
     }
-
 
     /**
      * 获取wifi列表
@@ -129,7 +128,6 @@ public class AtNetwork extends AtContextAbility {
         Context context = env._app;
         WifiManager manager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = manager.getConnectionInfo();
-
         return wifiInfo.getSSID().replaceAll("\"", "");
     }
 
@@ -146,7 +144,6 @@ public class AtNetwork extends AtContextAbility {
                 result = "WEP";
             }
         }
-
         return result;
     }
 
@@ -160,7 +157,6 @@ public class AtNetwork extends AtContextAbility {
         if (null != wifiManager && !wifiManager.isWifiEnabled()) {
             bRet = wifiManager.setWifiEnabled(true);
         }
-
         return bRet;
     }
 
@@ -251,7 +247,6 @@ public class AtNetwork extends AtContextAbility {
     public static WifiInfo getConnectionInfo() {
         Context context = env._app;
         WifiManager manager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
         return manager.getConnectionInfo();
     }
 
@@ -283,7 +278,6 @@ public class AtNetwork extends AtContextAbility {
         for (Map.Entry<String, ScanResult> entry : hashMap.entrySet()) {
             results.add(entry.getValue());
         }
-
         return results;
     }
 
@@ -311,7 +305,6 @@ public class AtNetwork extends AtContextAbility {
         for (int i = 1; i < maskParts.length; i++) {
             result.append(".").append(maskParts[i]);
         }
-
         return result.toString();
     }
 
@@ -376,7 +369,6 @@ public class AtNetwork extends AtContextAbility {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return result;
     }
 
@@ -398,7 +390,6 @@ public class AtNetwork extends AtContextAbility {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return result;
     }
 
@@ -477,7 +468,6 @@ public class AtNetwork extends AtContextAbility {
                     }
             }
         }
-
         return NET_UNKNOWN;
     }
 }
