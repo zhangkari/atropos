@@ -17,6 +17,13 @@ public final class AtLog extends AtAbilityAdapter {
         }
     }
 
+    // todo
+    public static void e(String module, String tag, String message) {
+        if (enable) {
+            Log.d(module, tag + " => " + message);
+        }
+    }
+
     public static void logTraceStack(String tag) {
         if (enable) {
             d("TraceStackLogger", tag, AtRuntime.logTraceStack(3, 16));
