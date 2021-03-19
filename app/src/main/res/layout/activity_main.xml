@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants"
+    android:focusable="true"
     android:gravity="center">
 
-    <TextView
+    <Button
+        android:id="@+id/tv_check_permission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:focusable="true"
+        android:text="Check Permission"
+        android:textAllCaps="false"
         android:textColor="@android:color/black" />
 
 </LinearLayout>
