@@ -20,6 +20,15 @@ public class AtPermission extends AtContextAbility {
     private static final String TAG = "AtPermission";
     private static final int REQUEST_CODE = 100;
 
+    /**
+     * request permissions defined in AndroidManifest.xml
+     * <p>
+     * use @see requestPermission() instead
+     *
+     * @param activity activity
+     * @param callback request permission callback
+     */
+    @Deprecated
     public static void requestAppPermission(@NonNull final AppCompatActivity activity, @NonNull final PermissionCallback callback) {
         String[] permissions = retrieveAppManifestPermission(activity);
         if (AtCollections.isEmpty(permissions)) {
@@ -34,6 +43,9 @@ public class AtPermission extends AtContextAbility {
 
             @Override
             public void onPermissionDenied(List<String> permissions) {
+                if (AtCollections.isEmpty(permissions)) {
+                    return;
+                }
                 String[] p = new String[permissions.size()];
                 permissions.toArray(p);
                 requestPermission(activity, p, callback);
@@ -70,9 +82,9 @@ public class AtPermission extends AtContextAbility {
             return;
         }
         activity.getSupportFragmentManager()
-            .beginTransaction()
-            .replace(android.R.id.content, retrieveFragment(activity, permissions, callback))
-            .commitAllowingStateLoss();
+                .beginTransaction()
+                .replace(android.R.id.content, retrieveFragment(activity, permissions, callback))
+                .commitAllowingStateLoss();
     }
 
     public static String[] retrieveAppManifestPermission(Context context) {
@@ -87,16 +99,16 @@ public class AtPermission extends AtContextAbility {
 
     private static PermissionFragment retrieveFragment(AppCompatActivity activity, String[] permissions, PermissionCallback callback) {
         Fragment fragment = activity.getSupportFragmentManager()
-            .findFragmentByTag(TAG);
+                .findFragmentByTag(TAG);
         if (fragment instanceof PermissionFragment) {
             PermissionFragment frag = (PermissionFragment) fragment;
             return frag.setPermissionCallback(callback)
-                .setPermissions(permissions)
-                .setRequestCode(REQUEST_CODE);
+                    .setPermissions(permissions)
+                    .setRequestCode(REQUEST_CODE);
         }
         return new PermissionFragment()
-            .setPermissionCallback(callback)
-            .setPermissions(permissions)
-            .setRequestCode(REQUEST_CODE);
+                .setPermissionCallback(callback)
+                .setPermissions(permissions)
+                .setRequestCode(REQUEST_CODE);
     }
 }
