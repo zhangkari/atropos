@@ -37,7 +37,9 @@ public class PermissionFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        requestPermissions(permissions, requestCode);
+        if (!AtCollections.isEmpty(permissions)) {
+            requestPermissions(permissions, requestCode);
+        }
     }
 
     @Override
