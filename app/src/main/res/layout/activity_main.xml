@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:descendantFocusability="afterDescendants"
     android:focusable="true"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/tv_check_permission"
@@ -15,4 +16,46 @@
         android:textAllCaps="false"
         android:textColor="@android:color/black" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="device id:" />
+
+        <TextView
+            android:id="@+id/tv_device_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_exec"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Input command"
+            android:inputType="text"
+            android:text="getprop ro.serialno" />
+
+        <Button
+            android:id="@+id/btn_exec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
+            android:text="Execute"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </LinearLayout>

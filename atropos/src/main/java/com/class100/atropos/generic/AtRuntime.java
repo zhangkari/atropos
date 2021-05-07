@@ -1,5 +1,7 @@
 package com.class100.atropos.generic;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -16,9 +18,9 @@ public final class AtRuntime extends AtAbilityAdapter {
         for (int i = stackTopOffset; i < maxStackDepth && i < elements.length; i++) {
             StackTraceElement e = elements[i];
             sb.append(e.getClassName())
-                .append("#")
-                .append(e.getMethodName())
-                .append("\n");
+                    .append("#")
+                    .append(e.getMethodName())
+                    .append("\n");
         }
         return sb.toString();
     }
@@ -75,6 +77,29 @@ public final class AtRuntime extends AtAbilityAdapter {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static ExecResult exec(String cmd) throws Exception {
+        StringBuilder sb = new StringBuilder();
+        Process process = Runtime.getRuntime().exec(cmd);
+        int status = process.waitFor();
+        BufferedReader buffReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+        String line = "";
+        while ((line = buffReader.readLine()) != null) {
+            sb.append(line);
+        }
+        return new ExecResult(status, sb.toString());
+    }
+
+    public static class ExecResult {
+        public final int status;
+        public final String content;
+
+        public ExecResult(int status, String content) {
+            this.status = status;
+            this.content = content;
         }
     }
 }

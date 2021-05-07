@@ -2,12 +2,15 @@ package com.class100.yunshixun
 
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.class100.atropos.env.context.AtDevices
 import com.class100.atropos.env.context.permission.AtPermission
 import com.class100.atropos.env.context.permission.PermissionCallback
 import com.class100.atropos.generic.AtFreqClick
-
+import com.class100.atropos.generic.AtRuntime
 
 class MainActivity : AppCompatActivity() {
     private val multiClick = lazy {
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setListener()
+        initView()
     }
 
     private fun setListener() {
@@ -29,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.tv_check_permission).setOnClickListener {
             checkPermission()
+        }
+
+        findViewById<View>(R.id.btn_exec).setOnClickListener {
+            val et = findViewById<EditText>(R.id.et_exec);
+            val cmd = et.text.toString()
+            val result = AtRuntime.exec(cmd);
+            et.setText(result.status.toString() + ":" + result.content)
         }
     }
 
@@ -47,5 +58,9 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, sb.toString(), Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+    private fun initView() {
+        findViewById<TextView>(R.id.tv_device_id).text = AtDevices.getDeviceUUID()
     }
 }
