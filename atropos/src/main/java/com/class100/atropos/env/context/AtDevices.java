@@ -197,13 +197,19 @@ public class AtDevices extends AtContextAbility {
 
     private static String buildDeviceUUID(Context context) {
         String androidId = getAndroidId(context);
-        if (!"9774d56d682e549c".equals(androidId)) {
-            Random random = new Random();
-            androidId = Integer.toHexString(random.nextInt())
-                    + Integer.toHexString(random.nextInt())
-                    + Integer.toHexString(random.nextInt());
+        if (AtTexts.isEmpty(androidId)) {
+            androidId = Build.SERIAL;
         }
-        return new UUID(androidId.hashCode(), getBuildInfo().hashCode()).toString();
+        if (AtTexts.isEmpty(androidId)) {
+            androidId = getWifiMacAddress();
+        }
+        if (AtTexts.isEmpty(androidId)) {
+            androidId = getBuildInfo();
+        }
+        if (AtTexts.isEmpty(androidId)) {
+            androidId =  new UUID(androidId.hashCode(), getBuildInfo().hashCode()).toString();
+        }
+        return androidId;
     }
 
     private static void saveDeviceUUID(Context context, String uuid) {
