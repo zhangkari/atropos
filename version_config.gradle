@@ -2,7 +2,7 @@ ext.depends = [:]
 
 def artifact = [:]
 artifact.vcode = 000007
-artifact.vname = "0.0.7-SNAPSHOT"
+artifact.vname = "0.0.7"
 
 def build = [:]
 build.compileSdkVersion = 28
