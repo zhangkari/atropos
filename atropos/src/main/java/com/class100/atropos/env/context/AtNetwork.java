@@ -161,7 +161,7 @@ public class AtNetwork extends AtContextAbility {
     }
 
 
-    public static void connectWifi(String wifiName, String password, String type) {
+    public static boolean connectWifi(String wifiName, String password, String type) {
         WifiManager wifiManager = (WifiManager) env._app.getSystemService(Context.WIFI_SERVICE);
         // 1、注意热点和密码均包含引号，此处需要需要转义引号
         String ssid = "\"" + wifiName + "\"";
@@ -206,7 +206,7 @@ public class AtNetwork extends AtContextAbility {
         }
         // 开始连接
         int id = wifiManager.addNetwork(conf);
-        wifiManager.enableNetwork(id, true);
+        return wifiManager.enableNetwork(id, true);
     }
 
     /**
